@@ -1,0 +1,352 @@
+/* [1]common style
+-opacity hover
+-overlay
+- section header
+-hover effect1
+-hover effect2
+*/
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.6) ;
+}
+.hover-opacity{
+    transition:opacity .5s;/*i want opacity becom 0.8 in time 0.5*/
+}
+.hover-opacity:hover{
+    opacity:0.8;
+}
+
+/*[2]general css style*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width:80%;
+    margin:auto;
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.clear{
+    clear: both;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family:montserrat ,sans-serif;
+}
+button{
+    font-family:inherit ;
+}
+.section-header{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 30px;;
+}
+.section-header .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    
+}
+.section-header .line{
+    display: block;
+    width:60px;
+    height: 5px;
+    margin:0 auto 70px auto;
+    background-color:  #6195ff;
+}
+.pd-y{
+    padding: 120px 0;
+}
+ 
+/* [3]section style
+header
+1-home section
+2-about section
+3-contact section
+4-prices section
+5-services section
+6-blog page*/
+
+/*3.0 -header*/
+.header{ 
+    position: fixed;
+    width: 100%;
+    z-index: 10; 
+}
+
+/* .header-content{
+    overflow:hidden; to solve float problem
+} */
+
+.header .nav{
+    text-align: right;
+    width:60%;
+    float:left;
+    list-style: none;
+}
+.header .nav >li{
+    width:70px;
+    display: inline-block;
+    text-align:right;
+}
+a{
+    text-decoration: none;
+}
+.header .nav >li> a{
+    color:white;
+    font-size:15px ;
+    display: block;
+    padding: 30px 15px;
+}
+.header .nav >li> a:after,.header .nav >li> a.active:after{
+    content:"";
+    margin-top: 2px;
+    height:3px;
+    transition: width 0.5s;
+    background-color: #6195ff;
+    display: block;
+}
+.header .nav >li> a:after{
+    width:0;
+}
+.header .nav >li >a.active:after{
+    width:100%;
+}
+.header .nav >li >a:hover:after{
+    width:100%;
+}
+.dropdown{
+    position:relative;
+}
+.dropdown-menu{
+    position:absolute;
+    background-color:darkcyan;
+    width: 150px;
+    left:-50%;
+    top:70%;
+    text-align: center;
+    opacity:0;
+    visibility: hidden;
+    transition:opacity 0.5;
+}
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility: visible;
+}
+.dropdown-menu a{
+    color:white;
+    display: block;
+    padding: 10px;
+
+}
+/* [3]section style
+header
+1-home section
+2-about section*/
+
+
+.about-content{
+    overflow: hidden;
+}
+.about-item{
+    width:30%;
+    height: 30%;
+    float:left;
+    margin-bottom:10px;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+.about-item .layer-content{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0,5s;
+}
+.about-item:hover .layer-content{
+    opacity: 1;
+    visibility: visible;
+}
+.about-item img{
+    width:100%;
+}
+.about-item:hover .layer-content .about-item-desc ,.about-item:hover .about-item-title,
+.about-item:hover .layer-content a{
+  top:0;  
+  opacity: 1;
+  visibility: visible;
+}
+.about-item.mg{
+    margin: 0 2%;}
+.layer-content .layer-info{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 80%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+ .layer-content .about-item-desc{
+color: #6195ff;
+display: inline-block;
+margin-bottom: 10px;
+text-transform: capitalize;
+position:relative; 
+top:10px;
+transition: top 0.5s,opacity 0.5s;
+transition-delay: opacity .2s;
+opacity: 0;
+visibility: hidden;
+}
+ .about-item-title{
+font-size: 25px;
+color: #666;
+margin-bottom: 10px;
+position:relative; 
+top:10px;
+transition: top 0.5s,opacity 0.5s;
+transition-delay: opacity 0.3s;
+opacity: 0;
+visibility:hidden ;
+}
+.layer-content a{
+    background-color:white;
+    position:relative; 
+    top:10px;
+    transition: top 0.5s,opacity 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.layer-content a i{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: turquoise;
+}
+
+
+/*4-table section*/
+.table{
+width:50%;
+    height: 50%;
+    margin:auto;
+   ;
+    text-align: center;
+    }
+.caption{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+}
+/*5-option section*/
+.name-pass{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+.btn-radio{
+    margin-left: 20px;
+    font-size: 20px;
+}
+.name{
+   
+    margin:0 15px;   
+}
+.select{
+    margin-left: 30%;
+}
+
+/*6-footer section*/
+.footer{
+    background:#1c1d21;
+    width: 100%;
+    padding: 70px 0;
+    text-align: center;
+}
+.footer-links{
+ list-style: none;
+ margin: 20px 0;
+}
+.footer-links li{
+    display: inline-block;
+}
+.footer-links li a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #6195ff;
+    color:antiquewhite;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+.footer-links li a i{
+    line-height: 50px;
+}
+.footer .copy{
+    font-size: 15px;
+    color:#999;
+    text-transform: uppercase;
+}
+
+/* 1-home*/
+.home{
+    height:100vh;
+    background-image: url(../image/road1.png);
+    background-size: cover;
+    position: relative;
+}
+ .home-content{
+     width:65%;
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   text-align: center; 
+}
+
+.home .title{
+    background:white; 
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+.home .home-desc{
+    margin:20px 0;
+    color: white;
+    letter-spacing:2px;
+    line-height: 1.5;
+}
+.home .btn{
+min-width:160px;
+padding:15px 0;
+border-radius: 5px;
+border:0;
+cursor: pointer;
+font-size: 20px;
+}
+.home .btn-start{
+    margin-right: 10px;
+    background-color: white;
+}
+.home .btn-learn{
+    background-color:teal;
+    color:white;
+}
+
